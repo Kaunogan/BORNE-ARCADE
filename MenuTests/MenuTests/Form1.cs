@@ -14,7 +14,7 @@ namespace MenuTests
     public partial class Form1 : Form
     {
         private string[] imgPaths;
-        private readonly string folderPath = @"C:\Dev\Ydays-Arcade\MenuTests\MenuTests\img";
+        private readonly string folderPath = @"C:\Dev\Ydays-Arcade\BORNE-ARCADE-MENU\MenuTests\MenuTests\img";
         private int index1 = 0;
         private int index2 = 1;
         private int index3 = 2;
