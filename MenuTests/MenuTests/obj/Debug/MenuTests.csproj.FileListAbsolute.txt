@@ -1,0 +1,10 @@
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\bin\Debug\MenuTests.exe.config
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\bin\Debug\MenuTests.exe
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\bin\Debug\MenuTests.pdb
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.csprojAssemblyReference.cache
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.Form1.resources
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.Properties.Resources.resources
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.csproj.GenerateResource.cache
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.csproj.CoreCompileInputs.cache
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.exe
+C:\Dev\Ydays-Arcade\MenuTests\MenuTests\obj\Debug\MenuTests.pdb
