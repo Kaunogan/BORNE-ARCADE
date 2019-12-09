@@ -1,0 +1,1 @@
+Génération de token pour la borne
