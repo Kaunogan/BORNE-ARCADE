@@ -1,0 +1,23 @@
+#pragma once
+
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/OpenGL.hpp>
+#include <tuple>
+#include <thread>
+#include <string>
+#include <stdio.h>
+#include <string>
+#include <sstream>
+#include <memory>
+#include <vector>
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/basic_file_sink.h"
+#include "player.h"
+#include "alien.h"
+#include "blastPlayer.h"
+#include "blastAlien.h"
+#include "fence.h"
+#include "items/health.h"
+#include "items/speed.h"

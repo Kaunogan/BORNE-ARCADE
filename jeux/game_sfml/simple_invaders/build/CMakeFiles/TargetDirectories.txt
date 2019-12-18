@@ -1,0 +1,6 @@
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/CMakeFiles/rebuild_cache.dir
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/CMakeFiles/edit_cache.dir
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/CMakeFiles/invaders.dir
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/spdlog/CMakeFiles/rebuild_cache.dir
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/spdlog/CMakeFiles/edit_cache.dir
+/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/spdlog/CMakeFiles/spdlog.dir
