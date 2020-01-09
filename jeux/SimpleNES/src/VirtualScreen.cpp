@@ -77,6 +77,4 @@ namespace sn
     {
         target.draw(m_vertices, states);
     }
-
-
 }

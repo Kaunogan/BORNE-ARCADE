@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Luckiest+Guy|Orbitron|Russo+One|Shadows+Into+Light|Teko&display=swap"
+    rel="stylesheet">
+
+  <title>Menu - Borne</title>
+</head>
+
+<body>
+
+  <!-- MENU -->
+
+  <div class="frame">
+    <img src="https://www.logolynx.com/images/logolynx/7f/7fe85fb6677eaf8d18c3511c3fcaad79.png">
+  </div>
+
+  <div class="times">
+    <h1>Temps</h1>
+    <p><span id="time"></span> minutes</p>
+    <button>Ajouter token</button>
+  </div>
+
+  <div class="frame-games">
+    <ul>
+      <li><input id="game-1" type="text" value="Super Mario Bros" readonly /></li>
+      <li><input id="game-2" type="text" value="Pac-Man"/ readonly></li>
+      <li><input id="game-3" type="text" value="Donkey Kong"/ readonly></li>
+    </ul>
+  </div>
+
+  <!-- END MENU -->
+  <!-- SCRIPTS -->
+
+  <!-- JQUERY -->
+  <script>window.$ = window.jQuery = require('jquery');</script>
+
+  <!-- SCRIPTS AUTO SELECT -->
+  <script src="assets/js/select/auto-select/select.js"></script>
+  <!-- END SCRIPTS AUTO SELECT -->
+
+  <!-- SCRIPTS CHANGE SELECT -->
+  <script src="assets/js/select/change-select/change.js"></script>
+  <!-- END SCRIPTS CHANGE SELECT -->
+
+  <!-- SCRIPTS TIMER -->
+  <script src="assets/js/timer/timer.js"></script>
+  <script>
+      // Read the time remaining
+      exec = false;
+      readTimeRemaining(`./remaining.txt`);
+  </script>
+  <!-- END SCRIPTS TIMER -->
+
+  <!-- END SCRIPTS -->
+</body>
+
+</html>
