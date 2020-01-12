@@ -44,25 +44,10 @@ font-size: 16px;
     float: left;
 }
 
-/*/////////// UL ///////////*/
+/*/////////// INPUT ///////////*/
 
-ul {
-    width: 500px;
-    height: 500px;
-    background-color: transparent;
-    margin: auto;
-    text-align: center;
-    border: 1px solid transparent;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    background-image: url("https://wpmisc.com/sites/default/files/wallpaper/abstract/66172/neon-grid-hd-wallpapers-66172-5530351.png");
-    background-size: cover;
-    color: wheat;
-
-}
-
-li {
-    list-style-type: none; 
+input {
+    visibility: hidden;
 }
 
 /*/////////// GAMES ///////////*/

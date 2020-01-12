@@ -21,6 +21,9 @@ function createWindow () {
 
   //mainWindow.maximize();
 
+  // Remove menu bar
+  //mainWindow.removeMenu();
+
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 

@@ -7,8 +7,15 @@
 */
 
 // Require
-var i = 1;
 const remote = require('electron').remote;
+
+// Variables
+var games_selected = document.getElementById('game-1');
+var i = 1;
+
+// Auto select input when the app launch
+games_selected.focus();
+games_selected.select();
 
 document.onkeydown = change_selected_games;
 
@@ -17,6 +24,16 @@ function change_selected_games(e) {
     e = e || window.event;
 
     if (e.keyCode == '90') {
+        if (i != 3) {
+           i++;
+        }
+        games_selected = document.getElementById(`game-${i}`);
+        games_selected.focus();
+        games_selected.select();
+        readTimeRemaining(`remaining.txt`);
+        document.querySelector('.swiper-button-next').click(); 
+    }
+    else if (e.keyCode == '83') {
         if (i != 1) {
             i--;
         }
@@ -24,15 +41,8 @@ function change_selected_games(e) {
         games_selected.focus();
         games_selected.select();
         readTimeRemaining(`remaining.txt`);
-    }
-    else if (e.keyCode == '83') {
-        if (i != 3) {
-            i++;
-        }
-        games_selected = document.getElementById(`game-${i}`);
-        games_selected.focus();
-        games_selected.select();
-        readTimeRemaining(`remaining.txt`);
+        document.querySelector('.swiper-button-prev').click(); 
+
 
     }
     else if (e.keyCode == '37') {

@@ -6,6 +6,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="node_modules/swiper/css/swiper.css">
+  <link rel="stylesheet" href="assets/css/swiper.css">
 
   <!-- FONTS -->
   <link
@@ -26,30 +28,35 @@
   <div class="times">
     <h1>Temps</h1>
     <p><span id="time"></span> minutes</p>
-    <button>Ajouter token</button>
+    <button>Ajouter jetons</button>
   </div>
 
   <div class="frame-games">
-    <ul>
-      <li><input id="game-1" type="text" value="Super Mario Bros" readonly /></li>
-      <li><input id="game-2" type="text" value="Pac-Man"/ readonly></li>
-      <li><input id="game-3" type="text" value="Donkey Kong"/ readonly></li>
-    </ul>
+    
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide"><input id="game-1" type="text" value="Super Mario Bros" readonly /></div>
+          <div class="swiper-slide"><input id="game-2" type="text" value="Pac-Man"/ readonly></div>
+          <div class="swiper-slide"><input id="game-3" type="text" value="Donkey Kong"/ readonly></div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div style="visibility: hidden;" class="swiper-button-prev"></div>
+      <div style="visibility: hidden;" class="swiper-button-next"></div>
   </div>
 
   <!-- END MENU -->
+
+  
   <!-- SCRIPTS -->
 
   <!-- JQUERY -->
   <script>window.$ = window.jQuery = require('jquery');</script>
 
-  <!-- SCRIPTS AUTO SELECT -->
-  <script src="assets/js/select/auto-select/select.js"></script>
-  <!-- END SCRIPTS AUTO SELECT -->
-
-  <!-- SCRIPTS CHANGE SELECT -->
-  <script src="assets/js/select/change-select/change.js"></script>
-  <!-- END SCRIPTS CHANGE SELECT -->
+  <!-- SCRIPTS SELECT GAME -->
+  <script src="assets/js/select-game/select-game.js"></script>
+  <!-- END SCRIPTS SELECT GAME -->
 
   <!-- SCRIPTS TIMER -->
   <script src="assets/js/timer/timer.js"></script>
@@ -59,6 +66,11 @@
       readTimeRemaining(`./remaining.txt`);
   </script>
   <!-- END SCRIPTS TIMER -->
+
+  <!-- SCRIPT SWIPER -->
+  <script src="node_modules/swiper/js/swiper.min.js"></script>
+  <script src="assets/js/swiper/init.js"></script>
+  <!-- END SCRIPT SWIPER -->
 
   <!-- END SCRIPTS -->
 </body>
