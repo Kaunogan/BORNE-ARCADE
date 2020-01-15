@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 600px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide:nth-child(1) {
+  background-image: url('../../img/games/superMarioBros.jpg')
+}
+.swiper-slide:nth-child(2) {
+  background-image: url('../../img/games/superMarioBros2.png')
+}
+.swiper-slide:nth-child(3) {
+  background-image: url('../../img/games/superMarioBros3.jpg')
+}
+.swiper-slide:nth-child(4) {
+  background-image: url('../../img/games/pacMan.jpg')
+}
+
+.swiper-slide:nth-child(5) {
+  background-image: url('../../img/games/donkeyKong.webp')
+}
+
+
+.swiper-pagination-bullet {
+ background: purple;
+  opacity: 1;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background:wheat;
+}

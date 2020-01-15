@@ -40,8 +40,7 @@ font-size: 16px;
 
 .times {
     color: wheat;
-    margin-left: 10%;
-    float: left;
+    margin-top: 35%;
 }
 
 /*/////////// INPUT ///////////*/
@@ -71,4 +70,12 @@ input {
     background: transparent;
     border-style: none;
     font-size: 20px;
+}
+
+/*/////////// QR CODE ///////////*/
+
+#img_qr_code {
+    width: 100%;
+    margin-left: 50%;
+    margin-top: 35%;
 }

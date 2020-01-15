@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/index/style.css">
   <link rel="stylesheet" href="node_modules/swiper/css/swiper.css">
-  <link rel="stylesheet" href="assets/css/swiper.css">
+  <link rel="stylesheet" href="assets/css/index/swiper.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/index/loader.css">
 
   <!-- FONTS -->
   <link
@@ -25,34 +27,54 @@
     <img src="https://www.logolynx.com/images/logolynx/7f/7fe85fb6677eaf8d18c3511c3fcaad79.png">
   </div>
 
-  <div class="times">
-    <h1>Temps</h1>
-    <p><span id="time"></span> minutes</p>
-    <button>Ajouter jetons</button>
-  </div>
-
-  <div class="frame-games">
-    
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide"><input id="game-1" type="text" value="Super Mario Bros" readonly /></div>
-          <div class="swiper-slide"><input id="game-2" type="text" value="Pac-Man"/ readonly></div>
-          <div class="swiper-slide"><input id="game-3" type="text" value="Donkey Kong"/ readonly></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="times">
+          <h1>Temps</h1>
+          <p><span id="time"></span> minutes</p>
+          <button id="btn_add_token" onclick="add_token()">Ajouter jetons</button>
+        </div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="col-sm">
+        <div class="frame-games">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><input id="game-1" type="text" value="Super Mario Bros" readonly /></div>
+              <div class="swiper-slide"><input id="game-2" type="text" value="Super Mario Bros 2"/ readonly></div>
+              <div class="swiper-slide"><input id="game-3" type="text" value="Super Mario Bros 3"/ readonly></div>
+              <div class="swiper-slide"><input id="game-4" type="text" value="Pac-Man"/ readonly></div>
+              <div class="swiper-slide"><input id="game-5" type="text" value="Donkey Kong"/ readonly></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div style="visibility: hidden;" class="swiper-button-prev"></div>
+            <div style="visibility: hidden;" class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <img id="img_qr_code"
+          src='https://www.unitag.io/qreator/generate?crs=xnjFkEn%252FP85fCPDXJ%252FXXKg5g6yQi7H4qzUlRVUntU035Re8CX7iHj071HbqF%252BCfYW0fkByoDtlWAYEP%252FkF2dipjP8Ux69VtYkusoonlKTAkgSRnmfwEzhpz3ulb%252BfgcH8xxrpOTbfLtqZS7YE5Pf9g%253D%253D&crd=fhOysE0g3Bah%252BuqXA7NPQ9erFDE6ibNaCGIkOKnY%252B8q%252BADHyy7yn4YsGFEwzMUqSPFdd%252FuBGx6TRlTC4dM7UEA%253D%253D'
+          alt='QR Code' />
 
-      <!-- If we need navigation buttons -->
-      <div style="visibility: hidden;" class="swiper-button-prev"></div>
-      <div style="visibility: hidden;" class="swiper-button-next"></div>
+        <div class="loading">
+
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- END MENU -->
 
-  
   <!-- SCRIPTS -->
 
   <!-- JQUERY -->
   <script>window.$ = window.jQuery = require('jquery');</script>
+
+  <!-- BOOTSTRAP -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
   <!-- SCRIPTS SELECT GAME -->
   <script src="assets/js/select-game/select-game.js"></script>
@@ -61,9 +83,9 @@
   <!-- SCRIPTS TIMER -->
   <script src="assets/js/timer/timer.js"></script>
   <script>
-      // Read the time remaining
-      exec = false;
-      readTimeRemaining(`./remaining.txt`);
+    // Read the time remaining
+    exec = false;
+    readTimeRemaining(`./remaining.txt`);
   </script>
   <!-- END SCRIPTS TIMER -->
 
@@ -71,6 +93,14 @@
   <script src="node_modules/swiper/js/swiper.min.js"></script>
   <script src="assets/js/swiper/init.js"></script>
   <!-- END SCRIPT SWIPER -->
+
+  <!-- SCRIPT ADD TOKEN -->
+  <script src="assets/js/add-token/add.js"></script>
+  <!-- SCRIPT END ADD TOKEN -->
+
+  <!-- REMOVE TOKEN USED -->
+  <script src="assets/js/remove-token-used/remove.js"></script>
+  <!-- END REMOVE TOKEN USED -->
 
   <!-- END SCRIPTS -->
 </body>

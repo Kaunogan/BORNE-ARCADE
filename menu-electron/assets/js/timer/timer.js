@@ -7,11 +7,11 @@
 */
 
 // Require
-const fs = require('fs')
+const fs = require('fs');
 
 // Variables
 var data                  = null;
-var times_remaining     = null; 
+var times_remaining       = null; 
 var rawFile               = null;
 var split_times_remaining = null;
 var minutes               = null;
