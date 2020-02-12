@@ -209,13 +209,13 @@ int main()
   app.setFramerateLimit(60);
 
   Texture t1, t2, t3, t4, t5, t6, t7;
-  t1.loadFromFile("images/spaceship.png");
-  t2.loadFromFile("images/background.jpg");
-  t3.loadFromFile("images/explosions/type_C.png");
-  t4.loadFromFile("images/rock.png");
-  t5.loadFromFile("images/fire_blue.png");
-  t6.loadFromFile("images/rock_small.png");
-  t7.loadFromFile("images/explosions/type_B.png");
+  t1.loadFromFile("assets/img/games_sfml/asteroid/spaceship.png");
+  t2.loadFromFile("assets/img/games_sfml/asteroid/background.jpg");
+  t3.loadFromFile("assets/img/games_sfml/asteroid/explosions/type_C.png");
+  t4.loadFromFile("assets/img/games_sfml/asteroid/rock.png");
+  t5.loadFromFile("assets/img/games_sfml/asteroid/fire_blue.png");
+  t6.loadFromFile("assets/img/games_sfml/asteroid/rock_small.png");
+  t7.loadFromFile("assets/img/games_sfml/asteroid/explosions/type_B.png");
 
   t1.setSmooth(true);
   t2.setSmooth(true);

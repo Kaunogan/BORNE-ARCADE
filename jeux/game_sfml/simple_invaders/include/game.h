@@ -74,13 +74,13 @@ private:
     int lives = 2;
 
     //PATHS
-    const std::string PATH_SHIP          = "assets/img/games_sfml/ship.png";
-    const std::string PATH_BLAST         = "assets/img/games_sfml/blast.png";
-    const std::string PATH_ALIEN         = "assets/img/games_sfml/alien.png";
-    const std::string PATH_BLAST_ALIEN   = "assets/img/games_sfml/alien_blast.png";
-    const std::string PATH_FENCE         = "assets/img/games_sfml/fence.png";
-    const std::string PATH_ITEM_HEALT    = "assets/img/games_sfml/heart.png";
-    const std::string PATH_ITEM_SPEED    = "assets/img/games_sfml/speed.png";
+    const std::string PATH_SHIP             = "assets/img/games_sfml/simple_invaders/ship.png";
+       const std::string PATH_BLAST         = "assets/img/games_sfml/simple_invaders/blast.png";
+       const std::string PATH_ALIEN         = "assets/img/games_sfml/simple_invaders/alien.png";
+       const std::string PATH_BLAST_ALIEN   = "assets/img/games_sfml/simple_invaders/alien_blast.png";
+       const std::string PATH_FENCE         = "assets/img/games_sfml/simple_invaders/fence.png";
+       const std::string PATH_ITEM_HEALT    = "assets/img/games_sfml/simple_invaders/heart.png";
+       const std::string PATH_ITEM_SPEED    = "assets/img/games_sfml/simple_invaders/speed.png";
 
     
     //Static Variables
