@@ -66,7 +66,7 @@ function audio_callback(event) {
 
 function keyboard(callback, event) {
     var player1 = 1;
-
+   
     // Binding key for player 1
     switch (event.keyCode) {
         case 13: // Start (Enter)

@@ -18,20 +18,24 @@ body {
 }
 
 .swiper-slide:nth-child(1) {
-  background-image: url('../../img/games/superMarioBros.jpg')
+  background-image: url('../../img/games/superMarioBros.png')
 }
 .swiper-slide:nth-child(2) {
   background-image: url('../../img/games/superMarioBros2.png')
 }
 .swiper-slide:nth-child(3) {
-  background-image: url('../../img/games/superMarioBros3.jpg')
+  background-image: url('../../img/games/superMarioBros3.png')
 }
 .swiper-slide:nth-child(4) {
-  background-image: url('../../img/games/pacMan.jpg')
+  background-image: url('../../img/games/pacman.png')
 }
 
 .swiper-slide:nth-child(5) {
-  background-image: url('../../img/games/donkeyKong.webp')
+  background-image: url('../../img/games/donkeyKong.png')
+}
+
+.swiper-slide:nth-child(6) {
+  background-image: url('../../img/games/spaceInvaders.jpg')
 }
 
 
