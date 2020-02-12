@@ -7,9 +7,6 @@
 */
 
 
-// Require
-
-
 setInterval(() => {
 
     var d = new Date();
@@ -17,15 +14,13 @@ setInterval(() => {
     if (d.getHours() == 23 && d.getMinutes() <= 58) {
 
 
-        // Write the time in 'remaining.txt' . 
-        fs.writeFile('tokenUsed.txt', "", (err) => {
+        // Write the time in 'remaining.conf' . 
+        fs.writeFile('tokenUsed.conf', "", (err) => {
 
             // In case of a error throw err. 
             if (err) throw err;
         })
 
         document.location.reload(true);
-
-
     }
 }, 900000);

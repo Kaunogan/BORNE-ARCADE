@@ -10,21 +10,22 @@
 const fs = require('fs')
 
 // Variables
-var code                     = null;
-var key                      = null;
-var json_token_parsed        = null;
-var date                     = null;
-var party                    = null;
-var codeDecrypted            = "";
-var d                        = new Date();
-var code_checked             = false;
-var date_checked             = false;
-var party_time               = null;
+var code = null;
+var key = null;
+var json_token_parsed = null;
+var date = null;
+var party = null;
+var codeDecrypted = "";
+var d = new Date();
+var code_checked = false;
+var date_checked = false;
+var party_time = null;
 var array_token_already_used = [];
-var token_already_used       = false;
-var minutes_remaining		 = null;	
-var secondes_remaining		 = null;	
-var times_remaining		     = null;	
+var token_already_used = false;
+var minutes_remaining = null;
+var secondes_remaining = null;
+var times_remaining = null;
+var token_remaining = null;
 
 // Function to decrypt token
 function parse_token(tokenFinal) {
@@ -90,18 +91,18 @@ function parse_token(tokenFinal) {
 		}
 
 		//Read token already used
-		readTokenAlreadyUsed(`../../tokenUsed.txt`);
+		readTokenAlreadyUsed(`../../config/tokenUsed.conf`);
 
 		// Check if the token is already used
 		for (var i = 0; i < array_token_already_used.length; i++) {
 
-			if(array_token_already_used[i].substring(0, 6) == json_token_parsed.token.substring(0, 6)){
+			if (array_token_already_used[i].substring(0, 6) == json_token_parsed.token.substring(0, 6)) {
 				token_already_used = true;
 			}
 		}
-		
-		if(!token_already_used === true){
-			
+
+		if (!token_already_used === true) {
+
 
 			array_token_already_used.push(json_token_parsed.token);
 
@@ -109,16 +110,37 @@ function parse_token(tokenFinal) {
 			writeToken(array_token_already_used);
 
 			// Get time remaining
-			readTime(`../../remaining.txt`);
-			minutes_remaining =  parseInt(minutes_remaining) + party_time;
-			times_remaining   = `${minutes_remaining.toString()}:${secondes_remaining}`
+			readTime(`../../config/remaining.conf`);
+			
+			// Get token remaining
+			readToken(`../../config/remainingToken.conf`);
+
+			minutes_remaining = parseInt(minutes_remaining) + party_time;
+			times_remaining = `${minutes_remaining.toString()}:${secondes_remaining}`
 
 			// Write the time remaining
 			writeTime(times_remaining);
 
+			// Write the token remaining
+			writeTokenRemaining(json_token_parsed.party);
 
 			setTimeout(() => {
-				$('#infos').html('Code valide')
+				$('#infos').html('Code valide');
+
+				// Write the value in 'pauseIsClose.conf' . 
+				fs.writeFile('config/pauseIsClose.conf', "true", (err) => {
+
+					// In case of a error throw err. 
+					if (err) throw err;
+				})
+
+				// Write the value in 'gameIsPause.conf' . 
+				fs.writeFile('config/gameIsPause.conf', "false", (err) => {
+
+					// In case of a error throw err. 
+					if (err) throw err;
+				})
+
 				setTimeout(() => {
 					window.close();
 				}, 1700);
@@ -156,6 +178,7 @@ function parse_token(tokenFinal) {
 	}
 }
 
+// Function to check the code
 function check_code(encryptedString, unshiftAmount) {
 
 	for (var i = 0; i < encryptedString.length; i++) {
@@ -177,6 +200,7 @@ function check_code(encryptedString, unshiftAmount) {
 	}
 }
 
+// Function to check the date
 function check_date(date_token) {
 
 	if ((parseInt(date_token) / 3) === d.getDate()) {
@@ -186,63 +210,87 @@ function check_date(date_token) {
 	}
 }
 
+// Function to write Time
 function writeTime(party_time) {
 
-	// Write the time in 'remaining.txt' . 
-	fs.writeFile('remaining.txt', party_time, (err) => {
+	// Write the time in 'remaining.conf' . 
+	fs.writeFile('config/remaining.conf', party_time, (err) => {
 
 		// In case of a error throw err. 
 		if (err) throw err;
 	})
 }
 
-function writeToken(array_token_already_used) {
+// Function to write Token
+function writeTokenRemaining(party) {
 
-		// Write the time in 'remaining.txt' . 
-		fs.writeFile('tokenUsed.txt', array_token_already_used, (err) => {
+	var token = parseInt(token_remaining) + parseInt(party);
 
-			// In case of a error throw err. 
-			if (err) throw err;
-		})
-	
+	// Write the token in 'remainingToken.conf' . 
+	fs.writeFile('config/remainingToken.conf', token, (err) => {
+
+		// In case of a error throw err. 
+		if (err) throw err;
+	})
 }
 
-function readTokenAlreadyUsed(file)
-{
-    rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
+
+// Function to write Token
+function writeToken(array_token_already_used) {
+
+	// Write the time in 'remaining.conf' . 
+	fs.writeFile('config/tokenUsed.conf', array_token_already_used, (err) => {
+
+		// In case of a error throw err. 
+		if (err) throw err;
+	})
+
+}
+
+// Function to read token already Used
+function readTokenAlreadyUsed(file) {
+	rawFile = new XMLHttpRequest();
+	rawFile.open("GET", file, false);
+	rawFile.onreadystatechange = function () {
+		if (rawFile.readyState === 4) {
+			if (rawFile.status === 200 || rawFile.status == 0) {
 				var allText = rawFile.responseText;
 				var tokenUsed = allText.split(',');
 				for (var i = 0; i < tokenUsed.length; i++) {
 					array_token_already_used.push(tokenUsed[i]);
 				}
-            }
-        }
-    }
-    rawFile.send(null);
+			}
+		}
+	}
+	rawFile.send(null);
 }
 
-function readTime(file)
-{
-    rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
+// Function to read time
+function readTime(file) {
+	rawFile = new XMLHttpRequest();
+	rawFile.open("GET", file, false);
+	rawFile.onreadystatechange = function () {
+		if (rawFile.readyState === 4) {
+			if (rawFile.status === 200 || rawFile.status == 0) {
 				var times = rawFile.responseText.split(':');
-				minutes_remaining  = times[0];
+				minutes_remaining = times[0];
 				secondes_remaining = times[1];
-            }
-        }
-    }
-    rawFile.send(null);
+			}
+		}
+	}
+	rawFile.send(null);
+}
+
+// Function to read time
+function readToken(file) {
+	rawFile = new XMLHttpRequest();
+	rawFile.open("GET", file, false);
+	rawFile.onreadystatechange = function () {
+		if (rawFile.readyState === 4) {
+			if (rawFile.status === 200 || rawFile.status == 0) {
+				token_remaining = rawFile.responseText;
+			}
+		}
+	}
+	rawFile.send(null);
 }

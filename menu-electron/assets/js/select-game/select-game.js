@@ -8,6 +8,8 @@
 
 // Require
 const remote = require('electron').remote;
+const shell = require('shelljs');
+shell.config.execPath = shell.which('node').toString()
 
 // Variables
 var games_selected = document.getElementById('game-1');
@@ -16,6 +18,7 @@ var isTopScreen = true;
 var i = 1;
 var j = 1;
 
+var launch_games = null;
 
 // Auto select input when the app launch
 games_selected.focus();
@@ -23,6 +26,7 @@ games_selected.select();
 
 document.onkeydown = change_selected_games;
 
+// Function to change the selected game
 function change_selected_games(e) {
 
     e = e || window.event;
@@ -43,7 +47,8 @@ function change_selected_games(e) {
                 games_selected = document.getElementById(`game-${i}`);
                 games_selected.focus();
                 games_selected.select();
-                readTimeRemaining(`remaining.txt`);
+                readTimeRemaining(`config/remaining.conf`);
+                readTokenRemaining(`config/remainingToken.conf`);
                 document.querySelector('.swiper-button-prev').click();
             }
             else if (i == 1) {
@@ -53,12 +58,13 @@ function change_selected_games(e) {
         }
         else if (e.keyCode == '68') { // D
     
-            if (i != 0 && i != 5) {
+            if (i != 0 && i != 6) {
                 i++;
                 games_selected = document.getElementById(`game-${i}`);
                 games_selected.focus();
                 games_selected.select();
-                readTimeRemaining(`remaining.txt`);
+                readTimeRemaining(`config/remaining.conf`);
+                readTokenRemaining(`config/remainingToken.conf`);
                 document.querySelector('.swiper-button-next').click();
             }
             else if (i == 0) {
@@ -67,8 +73,18 @@ function change_selected_games(e) {
             }
         }
         else if (e.keyCode == '13') {
+
+            // Check times remaining
+            readTimeRemaining("config/remaining.conf");
     
-            if ($('#time').html() != '00:00') {
+            //Change the value of close menu pause
+            fs.writeFile('config/pauseIsClose.conf', "false", (err) => {
+    
+                // In case of a error throw err. 
+                if (err) throw err;
+            })
+    
+            if (launch_games != "00:00" && $('#token').html() != "0") {
     
                 // Launch window of superMarioBros game
                 if ($(`#game-${i}`).val() === "Super Mario Bros") {
@@ -170,6 +186,15 @@ function change_selected_games(e) {
     
                     window.loadURL(`file://${__dirname}/games/window/donkeyKong.html`);
                 }
+            }
+            // Launch window of Donkey Kong game
+            else if ($(`#game-${i}`).val() === "Space Invaders") {
+
+                // Exec simple_nes C++
+                shell.exec('../../../C++WorkSpace/simple_invaders/build/invaders');
+
+                // Decrease Token
+                decreaseToken();
             }
         }
     }

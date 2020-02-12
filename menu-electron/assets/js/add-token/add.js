@@ -6,7 +6,7 @@
  * Desc : Open window with virtual keyboard to add token
 */
 
-// Opening new window and token
+// Opening new window token
 function add_token() {
 
     const BrowserWindow = remote.BrowserWindow;
@@ -24,4 +24,3 @@ function add_token() {
 
     window.loadURL(`file://${__dirname}/assets/html/token.html`);
 }
-
