@@ -2,13 +2,13 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-image: url("https://cdn.designbyhumans.com/file/module/store/672/46672/hero/4896966.jpg");
-    background-size: cover; 
+    background-image: url('../../img/backgrounds/background.png');
+    background-size: cover;
     
 }
 img {
     height: 200px;
-    width: 900px;
+    width: 500px;
     text-align: center;
     margin: auto;
 }
@@ -39,8 +39,8 @@ font-size: 16px;
     margin-top: 80px;
 }
 
-.title-asso-part {
-    margin-top: 150px;
+.container-asso {
+    margin-top: 170px;
     color: white;
 }
 
@@ -54,7 +54,8 @@ font-size: 16px;
 
 .asso-part-objectif {
     color: white;
-    margin-bottom: 75px;
+    margin-bottom: 50px;
+    margin-top: 25px
 }
 
 .image {
@@ -69,7 +70,7 @@ font-size: 16px;
 /*/////////// PARAMS ///////////*/
 
 .times {
-    color: wheat;
+    color: white;
     margin-top: 35%;
 }
 
@@ -82,7 +83,7 @@ input {
 /*/////////// GAMES ///////////*/
 
 #game-1 {
-    color: wheat;
+    color: white;
     background: transparent;
     border-style: none;
     font-size: 20px;
