@@ -29,7 +29,7 @@ Game::~Game()
 
 void Game::load()
 {
-    _font.loadFromFile("../assets/Sansation.ttf");
+    _font.loadFromFile("assets/ttf/simple_invaders/Sansation.ttf");
     _full_text_winLoose.setFont(_font);
     _full_text_winLoose.setCharacterSize(50);
 
@@ -61,7 +61,7 @@ void Game::wideTextLives(const std::string &text, const sf::Color &color)
     sf::FloatRect box = _full_text_Lives.getLocalBounds();
     _full_text_Lives.setOrigin(box.left + box.width / 2.0f,
                                box.top + box.height / 2.0f);
-    _full_text_Lives.setPosition(120, _window.getSize().y - 40);
+    _full_text_Lives.setPosition(120, _window.getSize().y-40);
     _full_text_Lives.setFillColor(color);
     _window.draw(_full_text_Lives);
 }
@@ -72,7 +72,7 @@ void Game::wideTextNumberOfAliens(const std::string &text, const sf::Color &colo
     sf::FloatRect box = _full_text_NumberOfAliens.getLocalBounds();
     _full_text_NumberOfAliens.setOrigin(box.left + box.width / 2.0f,
                                         box.top + box.height / 2.0f);
-    _full_text_NumberOfAliens.setPosition(1650, _window.getSize().y - 40);
+    _full_text_NumberOfAliens.setPosition(1650, _window.getSize().y-40);
     _full_text_NumberOfAliens.setFillColor(color);
     _window.draw(_full_text_NumberOfAliens);
 }
@@ -233,21 +233,17 @@ void Game::loop()
                     break;
 
                 // If left is pressed, move left the ship
-                case sf::Keyboard::Left:
+                case sf::Keyboard::Q:
                     leftFlag = true;
                     break;
 
                 // If Right is pressed, move right the ship
-                case sf::Keyboard::Right:
+                case sf::Keyboard::D:
                     rightFlag = true;
                     break;
 
-                case sf::Keyboard::Enter:
-                    close = true;
-                    break;
-
                 // If Space is pressed, the ship fire
-                case sf::Keyboard::Space:
+                case sf::Keyboard::M:
                     spaceFlag = true;
                     isFiring = true;
                     break;
@@ -262,12 +258,12 @@ void Game::loop()
                 {
 
                 // If Left is release, stop the ship
-                case sf::Keyboard::Left:
+                case sf::Keyboard::Q:
                     leftFlag = false;
                     break;
 
                 // If Right is release, stop the ship
-                case sf::Keyboard::Right:
+                case sf::Keyboard::D:
                     rightFlag = false;
                     break;
 
@@ -560,18 +556,11 @@ void Game::loop()
         // Detect if user Win or Lose
         if (alienVec.size() == 0 && win == true)
         {
-            this->wideTextWinLoose("                  YOU WIN !\n PRESS ENTER TO CONTINUE", sf::Color::Green);
-
-            if(close == true){
-                this->_window.close();
-            }
+            this->wideTextWinLoose("YOU WIN !", sf::Color::Green);
         }
         else if (loose == true)
         {
-            this->wideTextWinLoose("               YOU LOOSE !\n PRESS ENTER TO CONTINUE", sf::Color::Red);
-            if(close == true){
-                this->_window.close();
-            }
+            this->wideTextWinLoose("YOU LOOSE !", sf::Color::Red);
         }
 
         this->wideTextLives("LIVES : " + std::to_string(lives), sf::Color::Green);

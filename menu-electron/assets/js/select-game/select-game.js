@@ -186,16 +186,19 @@ function change_selected_games(e) {
     
                     window.loadURL(`file://${__dirname}/games/window/donkeyKong.html`);
                 }
-            }
-            // Launch window of Donkey Kong game
-            else if ($(`#game-${i}`).val() === "Space Invaders") {
+                 // Launch window of Donkey Kong game
+                else if ($(`#game-${i}`).val() === "Space Invaders") {
 
-                // Exec simple_nes C++
-                shell.exec('../../../C++WorkSpace/simple_invaders/build/invaders');
+                    // Exec simple_nes C++
+                    shell.exec('../jeux/game_sfml/simple_invaders/build/invaders');
 
-                // Decrease Token
-                decreaseToken();
+                    console.log('o')
+
+                    // Decrease Token
+                    decreaseToken();
+                }
             }
+           
         }
     }
     else {
@@ -207,6 +210,4 @@ function change_selected_games(e) {
             }
         }
     }
-
-
 }

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/spdlog
+# Install script for directory: /Users/energy/Programmation/YnovWorkSpace/C++WorkSpace/simple_invaders/spdlog
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

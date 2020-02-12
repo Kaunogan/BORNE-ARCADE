@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/src/main.cpp" "/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/CMakeFiles/invaders.dir/src/main.cpp.o"
+  "/Users/energy/Programmation/YnovWorkSpace/C++WorkSpace/simple_invaders/src/main.cpp" "/Users/energy/Programmation/YnovWorkSpace/C++WorkSpace/simple_invaders/build/CMakeFiles/invaders.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -22,7 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/build/spdlog/CMakeFiles/spdlog.dir/DependInfo.cmake"
+  "/Users/energy/Programmation/YnovWorkSpace/C++WorkSpace/simple_invaders/build/spdlog/CMakeFiles/spdlog.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

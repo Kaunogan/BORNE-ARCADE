@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacO
 
 CXX_DEFINES = -DSPDLOG_COMPILED_LIB
 
-CXX_INCLUDES = -I/Users/energy/Programmation/YnovWorkSpace/YDaysWorkSpace/BORNE-ARCADE/jeux/simple_invaders/spdlog/include 
+CXX_INCLUDES = -I/Users/energy/Programmation/YnovWorkSpace/C++WorkSpace/simple_invaders/spdlog/include 
 

@@ -69,20 +69,20 @@ private:
     //Check if the playe WIN/LOOSE
     bool loose = false;
     bool win   = true;
-    bool close = false;
 
     //Lives
     int lives = 2;
 
     //PATHS
-    const std::string PATH_SHIP          = "../assets/img/ship.png";
-    const std::string PATH_BLAST         = "../assets/img/blast.png";
-    const std::string PATH_ALIEN         = "../assets/img/alien.png";
-    const std::string PATH_BLAST_ALIEN   = "../assets/img/alien_blast.png";
-    const std::string PATH_FENCE         = "../assets/img/fence.png";
-    const std::string PATH_ITEM_HEALT    = "../assets/img/heart.png";
-    const std::string PATH_ITEM_SPEED    = "../assets/img/speed.png";
+    const std::string PATH_SHIP          = "assets/img/games_sfml/ship.png";
+    const std::string PATH_BLAST         = "assets/img/games_sfml/blast.png";
+    const std::string PATH_ALIEN         = "assets/img/games_sfml/alien.png";
+    const std::string PATH_BLAST_ALIEN   = "assets/img/games_sfml/alien_blast.png";
+    const std::string PATH_FENCE         = "assets/img/games_sfml/fence.png";
+    const std::string PATH_ITEM_HEALT    = "assets/img/games_sfml/heart.png";
+    const std::string PATH_ITEM_SPEED    = "assets/img/games_sfml/speed.png";
 
+    
     //Static Variables
     static constexpr int WINDOW_WIDTH  = 1800;
     static constexpr int WINDOW_HEIGHT = 1300;
