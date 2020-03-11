@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+  background: url("/assets/img/background.png");
+}
+
+.btn_myarticles {
+  height: 5%;
+  width: 5%;
+  color: blueviolet;
+}
+
+.HiPayField--focused+.hipay-field-label {
+  color: green;
+}
+
+.HiPayField--focused+.hipay-field-label+.hipay-field-baseline {
+  border-bottom: solid 1px green;
+}
+
+[data-hipay-id='hipay-help-cvc'] {
+  color: green;
+  background-color: palegreen;
+  border: solid 1px green;
+}

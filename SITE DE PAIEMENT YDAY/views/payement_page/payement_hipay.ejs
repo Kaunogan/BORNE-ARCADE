@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <title>Payement pour borne d'arcade</title>
+    <meta charset="UTF-8">
+    <link rel="icon"
+          type="image/png"
+          href="/img/logo.png" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="/img/favicon.ico"
+          rel="shortcut icon" />
+    <!-- Google Font -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet"
+          href="/assets/css/page_aceuille.css">
+    <!-- JS -->
+    <script type="text/javascript"
+            src="https://libs.hipay.com/js/sdkjs.js"></script>
+  </head>
+
+  <body>
+    <script>
+      var hipay = HiPay({
+        username: 'HIPAY-PUBLIC-LOGIN',
+        password: 'HIPAY-PUBLIC-PASSWORD',
+        environment: 'production',
+        lang: 'en'
+      });
+    </script>
+    <form id="hipay-form">
+      <div id="hipay-hostedpayments-form"></div>
+      <button type="submit"
+              id="hipay-submit-button"
+              disabled="true"> PAY </button>
+    </form>
+    <script>
+      var config = {
+        selector: 'hipay-hostedpayments-form' // form container div id
+      };
+
+      var hostedPaymentsInstance = hipay.create('hosted-payments', config);
+    </script>
+    <script>
+      var config = {
+        selector: 'hipay-hostedpayments-form',
+        card: {
+          multi_use: false,
+          fields: {
+            cardHolder: {
+              defaultValue: 'John Doe'
+            }
+          }
+        },
+        sdd: {
+          fields: {
+            firstname: {
+              defaultValue: 'John'
+            },
+            lastname: {
+              defaultValue: 'Doe'
+            }
+          }
+        },
+        styles: {
+          base: { // default field styling
+            color: "#000000",
+            fontSize: "15px",
+            fontWeight: 400,
+            placeholderColor: "#999999",
+            iconColor: 'green',
+            caretColor: "green"
+          },
+          invalid: { // invalid field styling
+            color: '#D50000',
+            caretColor: '#D50000'
+          }
+        }
+      };
+
+      var hostedPaymentsInstance = hipay.create('hosted-payments', config);
+    </script>
+  </body>
+
+</html>
