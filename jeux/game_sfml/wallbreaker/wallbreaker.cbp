@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wallbreaker" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="wallbreaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWALLBREAKER_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="sfml-audio" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="wallbreaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="sfml-audio" />
+					<Add library="sfml-graphics" />
+					<Add library="sfml-window" />
+					<Add library="sfml-system" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pedantic" />
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add directory="src" />
+		</Compiler>
+		<Unit filename="resources/levels/levels.txt" />
+		<Unit filename="src/Core/Config.hpp" />
+		<Unit filename="src/Core/Effect.cpp" />
+		<Unit filename="src/Core/Effect.hpp" />
+		<Unit filename="src/Core/Game.cpp" />
+		<Unit filename="src/Core/Game.hpp" />
+		<Unit filename="src/Core/HUD.cpp" />
+		<Unit filename="src/Core/HUD.hpp" />
+		<Unit filename="src/Core/LevelManager.cpp" />
+		<Unit filename="src/Core/LevelManager.hpp" />
+		<Unit filename="src/Core/Main.cpp" />
+		<Unit filename="src/Core/ParticleEmitter.cpp" />
+		<Unit filename="src/Core/ParticleEmitter.hpp" />
+		<Unit filename="src/Core/ParticleSystem.cpp" />
+		<Unit filename="src/Core/ParticleSystem.hpp" />
+		<Unit filename="src/Core/Resources.cpp" />
+		<Unit filename="src/Core/Resources.hpp" />
+		<Unit filename="src/Core/Settings.cpp" />
+		<Unit filename="src/Core/Settings.hpp" />
+		<Unit filename="src/Core/SoundSystem.cpp" />
+		<Unit filename="src/Core/SoundSystem.hpp" />
+		<Unit filename="src/Entities/Ball.cpp" />
+		<Unit filename="src/Entities/Ball.hpp" />
+		<Unit filename="src/Entities/Brick.cpp" />
+		<Unit filename="src/Entities/Brick.hpp" />
+		<Unit filename="src/Entities/Context.cpp" />
+		<Unit filename="src/Entities/Context.hpp" />
+		<Unit filename="src/Entities/Entity.cpp" />
+		<Unit filename="src/Entities/Entity.hpp" />
+		<Unit filename="src/Entities/LaserBeam.cpp" />
+		<Unit filename="src/Entities/LaserBeam.hpp" />
+		<Unit filename="src/Entities/Paddle.cpp" />
+		<Unit filename="src/Entities/Paddle.hpp" />
+		<Unit filename="src/Entities/PowerUp.cpp" />
+		<Unit filename="src/Entities/PowerUp.hpp" />
+		<Unit filename="src/Gui/BitmapFont.cpp" />
+		<Unit filename="src/Gui/BitmapFont.hpp" />
+		<Unit filename="src/Gui/BitmapText.cpp" />
+		<Unit filename="src/Gui/BitmapText.hpp" />
+		<Unit filename="src/Gui/Button.cpp" />
+		<Unit filename="src/Gui/Button.hpp" />
+		<Unit filename="src/Gui/CheckBox.cpp" />
+		<Unit filename="src/Gui/CheckBox.hpp" />
+		<Unit filename="src/Gui/Label.cpp" />
+		<Unit filename="src/Gui/Label.hpp" />
+		<Unit filename="src/Gui/Layout.cpp" />
+		<Unit filename="src/Gui/Layout.hpp" />
+		<Unit filename="src/Gui/Menu.cpp" />
+		<Unit filename="src/Gui/Menu.hpp" />
+		<Unit filename="src/Gui/OptionsBox.hpp" />
+		<Unit filename="src/Gui/OptionsBox.inl" />
+		<Unit filename="src/Gui/Theme.cpp" />
+		<Unit filename="src/Gui/Theme.hpp" />
+		<Unit filename="src/Gui/Utils/Arrow.cpp" />
+		<Unit filename="src/Gui/Utils/Arrow.hpp" />
+		<Unit filename="src/Gui/Utils/Box.hpp" />
+		<Unit filename="src/Gui/Utils/Box.inl" />
+		<Unit filename="src/Gui/Utils/Cross.cpp" />
+		<Unit filename="src/Gui/Utils/Cross.hpp" />
+		<Unit filename="src/Gui/Widget.cpp" />
+		<Unit filename="src/Gui/Widget.hpp" />
+		<Unit filename="src/States/Editor.cpp" />
+		<Unit filename="src/States/Editor.hpp" />
+		<Unit filename="src/States/MainMenu.cpp" />
+		<Unit filename="src/States/MainMenu.hpp" />
+		<Unit filename="src/States/OptionsMenu.cpp" />
+		<Unit filename="src/States/OptionsMenu.hpp" />
+		<Unit filename="src/States/Screen.cpp" />
+		<Unit filename="src/States/Screen.hpp" />
+		<Unit filename="src/States/Wallbreaker.cpp" />
+		<Unit filename="src/States/Wallbreaker.hpp" />
+		<Unit filename="src/Utils/FileSystem.cpp" />
+		<Unit filename="src/Utils/FileSystem.hpp" />
+		<Unit filename="src/Utils/IniParser.cpp" />
+		<Unit filename="src/Utils/IniParser.hpp" />
+		<Unit filename="src/Utils/Math.cpp" />
+		<Unit filename="src/Utils/Math.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

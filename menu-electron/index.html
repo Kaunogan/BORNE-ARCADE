@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/index/style.css">
+  <link rel="stylesheet" href="node_modules/swiper/css/swiper.css">
+  <link rel="stylesheet" href="assets/css/index/swiper.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/index/loader.css">
+
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface|Luckiest+Guy|Orbitron|Russo+One|Shadows+Into+Light|Teko&display=swap"
+    rel="stylesheet">
+
+  <title>Menu - Borne</title>
+</head>
+
+<body>
+  <!-- MENU -->
+
+  <div class="frame">
+    <img src="./assets/img/backgrounds/Titre.png">  
+  </div>
+  
+  <div class="container main-container">
+    <div class="row main-part">
+      <div class="col-sm">
+        <div class="times">
+          <h1>Temps</h1>
+          <p><span id="time"></span> minutes</p>
+          <h1>Jetons</h1>
+          <p><span id="token"></span> jetons</p>
+          <button id="btn_add_token" onclick="add_token()">Ajouter jetons</button>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="frame-games">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><input id="game-1" type="text" value="Super Mario Bros" readonly /></div>
+              <div class="swiper-slide"><input id="game-2" type="text" value="Super Mario Bros 2" / readonly></div>
+              <div class="swiper-slide"><input id="game-3" type="text" value="Super Mario Bros 3" / readonly></div>
+              <div class="swiper-slide"><input id="game-4" type="text" value="Pac-Man" / readonly></div>
+              <div class="swiper-slide"><input id="game-5" type="text" value="Donkey Kong" / readonly></div>
+              <div class="swiper-slide"><input id="game-6" type="text" value="Space Invaders" / readonly></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div style="visibility: hidden;" class="swiper-button-prev"></div>
+            <div style="visibility: hidden;" class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <img id="img_qr_code"
+          src='https://www.unitag.io/qreator/generate?crs=xnjFkEn%252FP85fCPDXJ%252FXXKg5g6yQi7H4qzUlRVUntU035Re8CX7iHj071HbqF%252BCfYW0fkByoDtlWAYEP%252FkF2dipjP8Ux69VtYkusoonlKTAkgSRnmfwEzhpz3ulb%252BfgcH8xxrpOTbfLtqZS7YE5Pf9g%253D%253D&crd=fhOysE0g3Bah%252BuqXA7NPQ9erFDE6ibNaCGIkOKnY%252B8q%252BADHyy7yn4YsGFEwzMUqSPFdd%252FuBGx6TRlTC4dM7UEA%253D%253D'
+          alt='QR Code' />
+        <div class="loading">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-asso">
+    <!-- présentation association-->
+    <div class="row title-asso-part">
+      <div class="d-flex justify-content-center col-sm-12"> <h2>L'association pour laquelle vous allez donner :</h2></div>
+    </div>
+    <div class="row asso-part-history">
+      <div class="col-sm-8">
+        <h3>Histoire : </h3>
+        <div>
+          Un Enfant par la Main est une Association loi 1901 qui propose de parrainer des enfants démunis et de réaliser des projets dans leurs communautés à travers le monde.
+          
+          L'Association mène avec ses partenaires sur le terrain, des programmes de développement dans 20 pays en Afrique, aux Amériques et en Asie, et est directement opérationnelle à Haiti et à Madagascar.</div>
+      </div>
+      <div class="col-sm-4"><img class="image" src="assets/img/association/UEPLM/logo_UEPLM.png"  alt="logo de l'association"/></div>
+    </div>
+    <div class="row asso-part-approche">
+      <div class="col-sm">
+        <h3>L'approche : </h3>
+        <div>
+          Des besoins adaptés à chaque âge :
+          Pour que les enfants puissent développer au mieux leur potentiel et bien grandir, il est important d'adapter nos actions à leurs besoins qui évoluent à chaque étape de leur vie :
+        </div>
+        <div>0-5 ans : Pour les nouveau-nés et les enfants en bas âge, les programmes d'Un Enfant Par La Main sont principalement dédiés à la nutrition, la santé, la protection et l’apprentissage préscolaire.
+        </div>
+        <div>6-14ans : 
+        Pour les enfants et jeunes adolescents, les programmes d'Un Enfant Par La Main sont orientés vers l’apprentissage scolaire, la santé, la sociabilisation avec les autres enfants et les adultes, l'implication dans la vie familiale, la vie scolaire et de leur village.
+        </div>
+        <div>
+        15-24ans : 
+        Pour les jeunes adultes, les programmes d'Un Enfant Par La Main visent à faire prévenir et sensibiliser sur la santé reproductive et les maladies sexuellement transmissibles, à renforcer leur engagement civique et leur leadership, et à améliorer leur employabilité.
+        </div>
+      </div>
+    </div>
+    
+    <div class="row asso-part-objectif">
+      <div class="col-sm-4"><img class="image" src="assets/img/association/UEPLM/UEPLM_objectifs.jpg"  /></div>
+      <div class="col-sm-8">
+        <h3>Objectif : </h3>
+        <div>
+          Notre objectif : Donner à chaque enfant les moyens de construire sa vie. Parce que l’éducation est primordiale, nous nous engageons à :
+          Améliorer la qualité de l’enseignement pour bien préparer les enfants à la vie adulte, en finançant l’infrastructure et les équipements des écoles partenaires, et en formant les enseignants.
+          Développer les revenus des familles pour financer la scolarité, mais aussi pour améliorer durablement leurs conditions de vie, grâce au parrainage, au développement de l’agriculture durable et à la formation professionnelle.
+          Libérer les enfants de leurs corvées pour qu’ils aient le temps d’étudier, en favorisant l’accès à l’eau.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END MENU -->
+
+  <!-- SCRIPTS -->
+
+  <!-- JQUERY -->
+  <script>window.$ = window.jQuery = require('jquery');</script>
+
+  <!-- BOOTSTRAP -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- SCRIPTS SELECT GAME -->
+  <script src="assets/js/select-game/select-game.js"></script>
+  <!-- END SCRIPTS SELECT GAME -->
+
+  <!-- SCRIPTS TIMER -->
+  <script src="assets/js/timer/timer.js"></script>
+  <script>
+    // Read the time remaining
+    exec = false;
+    readTimeRemaining(`./config/remaining.conf`);
+    readTokenRemaining(`./config/remainingToken.conf`);
+  </script>
+  <!-- END SCRIPTS TIMER -->
+
+  <!-- SCRIPT SWIPER -->
+  <script src="node_modules/swiper/js/swiper.min.js"></script>
+  <script src="assets/js/swiper/init.js"></script>
+  <!-- END SCRIPT SWIPER -->
+
+  <!-- SCRIPT ADD TOKEN -->
+  <script src="assets/js/add-token/add.js"></script>
+  <!-- SCRIPT END ADD TOKEN -->
+
+  <!-- REMOVE TOKEN USED -->
+  <script src="assets/js/remove-token-used/remove.js"></script>
+  <!-- END REMOVE TOKEN USED -->
+
+  <!-- END SCRIPTS -->
+</body>
+</html>
