@@ -1,5 +1,0 @@
-- Change size of the window : VirtualScreen.cpp row -> 16
-
-- Launch games              : ./SimpleNES -w size ../games/NameOfGame.nes 
-
-- Kill pid                  : pkill -f ./SimpleNES
