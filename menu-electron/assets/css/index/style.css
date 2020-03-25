@@ -112,7 +112,8 @@ input {
 
 #img_qr_code {
     width: 15vw;
-    margin-left: 5vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
     margin-top: 5vw;
 }
 
