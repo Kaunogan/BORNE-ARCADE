@@ -10,8 +10,8 @@ body {
     background-size: cover;
 }
 img {
-    height: 200px;
-    width: 500px;
+    height: 30vh;
+    width: 40vw;
     text-align: center;
     margin: auto;
 }
@@ -19,7 +19,7 @@ img {
     text-align: center;
     margin: auto;
     z-index: 10;
-    margin-top: 35px;
+    margin-top: 5vh;
 }
 .button {
  text-align: middle;
@@ -39,12 +39,13 @@ font-family: 'Luckiest Guy', cursive;
 font-size: 16px;
 }
 .btn-group {
-    margin-top: 80px;
+    margin-top: 6vh;
 }
 
 .container-asso {
-    margin-top: 170px;
+    margin-top: 25vh;
     color: white;
+    font-size: 2.1vh;
 }
 
 .asso-part-history{
@@ -57,12 +58,13 @@ font-size: 16px;
 
 .asso-part-objectif {
     color: white;
-    margin-bottom: 50px;
-    margin-top: 25px
+    margin-bottom: 4vh;
+    margin-top: 2vh
 }
 
 .image {
-    width: 100%;
+    width: 20vw;
+    height: 25vh;
 }
 
 ::-webkit-scrollbar {
@@ -74,7 +76,7 @@ font-size: 16px;
 
 .times {
     color: white;
-    margin-top: 35%;
+    margin-top: 6vh;
 }
 
 /*/////////// INPUT ///////////*/
@@ -109,9 +111,9 @@ input {
 /*/////////// QR CODE ///////////*/
 
 #img_qr_code {
-    width: 100%;
-    margin-left: 50%;
-    margin-top: 35%;
+    width: 15vw;
+    margin-left: 5vw;
+    margin-top: 5vw;
 }
 
 
