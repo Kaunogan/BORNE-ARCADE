@@ -10,4 +10,4 @@ Défilement de messages concernant les informations de l'association
 
 # TO DO
 
-Fenêtre permettant d'ajouter les tokens
+Décryptage des tokens
