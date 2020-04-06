@@ -7,7 +7,7 @@ body {
 
 body {
   margin: 0px;
-  background: url("../img/background/background.png");
+  background: url("../../img/background/background.png");
   background-attachment: fixed;
   background-position: center;
   overflow: hidden;
@@ -50,25 +50,25 @@ body {
 }
 
 .swiper-slide:nth-child(1) {
-  background-image: url("../img/games/infinite-mario-bros.png");
+  background-image: url("../../img/games/infinite-mario-bros.png");
   background-position: center;
   background-size: cover;
   height: 30%;
 }
 .swiper-slide:nth-child(2) {
-  background-image: url("../img/games/pong.jpg");
+  background-image: url("../../img/games/pong.jpg");
   background-position: center;
   background-size: cover;
   height: 30%;
 }
 .swiper-slide:nth-child(3) {
-  background-image: url("../img/games/pacman.png");
+  background-image: url("../../img/games/pacman.png");
   background-position: center;
   background-size: cover;
   height: 30%;
 }
 .swiper-slide:nth-child(4) {
-  background-image: url("../img/games/tetris.jpg");
+  background-image: url("../../img/games/tetris.jpg");
   background-position: center;
   background-size: cover;
   height: 30%;

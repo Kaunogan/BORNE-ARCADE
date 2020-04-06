@@ -100,7 +100,26 @@ function select_game(e) {
         });
       }
     }
-  } else if (e.keyCode == "13" && token !== 0) {
+  } else if (e.keyCode == "70") {
+    // New window to add tokens
+    var BrowserWindow = remote.BrowserWindow;
+        var window = new BrowserWindow({
+          height: 600,
+          width: 800,
+          webPreferences: {
+            nodeIntegration: true,
+          },
+        });
+
+        //Remove menu bar
+        //window.removeMenu();
+        // Load the URL 
+        window.loadURL(
+          `file://${__dirname}/token.html`
+        );
+  }
+
+  else if (e.keyCode == "13" && token !== 0) {
     // Enter
 
     switch (index_game) {
