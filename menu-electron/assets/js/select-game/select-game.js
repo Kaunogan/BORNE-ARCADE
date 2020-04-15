@@ -24,7 +24,7 @@ var launch_games = null;
 games_selected.focus();
 games_selected.select();
 
-document.onkeydown = change_selected_games;
+document.addEventListener('keydown', change_selected_games);
 
 // Function to change the selected game
 function change_selected_games(e) {
