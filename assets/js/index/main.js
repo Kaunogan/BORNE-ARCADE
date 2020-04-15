@@ -54,8 +54,8 @@ fadeAnimation();
 function select_game(e) {
   if (e.keyCode == "83") {
     // S
-  } else if (e.keyCode == "81") {
-    // Q
+  } else if (e.keyCode == "37") {
+    // <-
     if (index_game !== 0) {
       token_remaining();
 
@@ -79,8 +79,8 @@ function select_game(e) {
         });
       }
     }
-  } else if (e.keyCode == "68") {
-    // D
+  } else if (e.keyCode == "39") {
+    // ->
     if (index_game !== 3) {
       token_remaining();
       document.querySelector(".swiper-button-next").click();
