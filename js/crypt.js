@@ -46,44 +46,44 @@ var alphabet = [
 // Check date and Leter
 
 readInFileDate(
-	"http://localhost/Ynov/Site_Paiement_Borne/conf/date.conf",
+	"http://localhost/Perso/Ynov/Site_Paiement_Borne/conf/date.conf",
 	function () {
 		if (month > parseInt(old_month) || month < parseInt(old_month)) {
 			console.warn("1");
 
 			clearFileToken(
-				"http://localhost/Ynov/Site_Paiement_Borne/php/clearToken.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
 			);
 
 			writeInFileDate(
 				month.toString() + "," + d.toString(),
-				"http://localhost/Ynov/Site_Paiement_Borne/php/writeDate.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
 			);
 
 			writeInFileLetter(
 				alphabet[d - 1].toString(),
-				"http://localhost/Ynov/Site_Paiement_Borne/php/writeLetter.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
 			);
 		} else if (month == parseInt(old_month) && d > parseInt(old_date)) {
 			console.warn("2");
 
 			clearFileToken(
-				"http://localhost/Ynov/Site_Paiement_Borne/php/clearToken.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
 			);
 
 			writeInFileDate(
 				month.toString() + "," + d.toString(),
-				"http://localhost/Ynov/Site_Paiement_Borne/php/writeDate.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
 			);
 
 			writeInFileLetter(
 				alphabet[d - 1].toString(),
-				"http://localhost/Ynov/Site_Paiement_Borne/php/writeLetter.php"
+				"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
 			);
 		}
 
 		readInFileLetter(
-			"http://localhost/Ynov/Site_Paiement_Borne/conf/letter.conf"
+			"http://localhost/Perso/Ynov/Site_Paiement_Borne/conf/letter.conf"
 		);
 	}
 );
@@ -91,7 +91,7 @@ readInFileDate(
 // For the token
 
 readInFileTokenUsed(
-	"http://localhost/Ynov/Site_Paiement_Borne/conf/tokenUsed.conf",
+	"http://localhost/Perso/Ynov/Site_Paiement_Borne/conf/tokenUsed.conf",
 	function () {
 		random_number();
 	}
@@ -128,7 +128,7 @@ function mod(n, p) {
 
 // Random
 function random_number() {
-	random = Math.floor(Math.random() * (999 - 1 + 1)) + 1; // Random number
+	random = Math.floor(Math.random() * (999 - 100 + 1)) + 100; // Random number
 	encMsg = encrypt(msg, random); // Call crypt function
 
 	var token = encMsg.toString() + random.toString(); // Token to write in file
@@ -142,7 +142,7 @@ function random_number() {
 				if (element === token) {
 					console.warn("generate new token !");
 					exit = true;
-					random = Math.floor(Math.random() * (999 - 1 + 1)) + 1; // Random number
+					random = Math.floor(Math.random() * (999 - 100 + 1)) + 100; // Random number
 					encMsg = encrypt(msg, random); // Call crypt function
 					token = encMsg.toString() + random.toString();
 					return;
@@ -155,7 +155,7 @@ function random_number() {
 
 	writeInFileToken(
 		token,
-		"http://localhost/Ynov/Site_Paiement_Borne/php/writeToken.php"
+		"http://localhost/Perso/Ynov/Site_Paiement_Borne/php/writeToken.php"
 	); // Call function to write token in file
 }
 
