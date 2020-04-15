@@ -15,6 +15,7 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadFile("view/index.html");
+  mainWindow.setFullScreen(true);
 
   // Hide menu tools
   mainWindow.setMenuBarVisibility(false);

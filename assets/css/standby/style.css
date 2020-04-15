@@ -1,0 +1,21 @@
+* {
+    cursor: none;
+    color: white;
+}
+
+body {
+    background-image: url("../../img/background/standby_background.png");
+    background-size: cover; 
+    overflow: hidden;
+}
+
+#container {
+    margin: 0 auto;
+    width: 41%;
+}
+
+video{
+    width: 97%;
+    display: block;
+    margin: 0 auto;
+}

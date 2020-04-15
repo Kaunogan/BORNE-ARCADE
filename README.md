@@ -6,8 +6,4 @@ Jeux open source (Mario, pong, pacman, tetris)
 
 Responsive
 
-Défilement de messages concernant les informations de l'association
-
-# TO DO
-
-Décryptage des tokens
+Défilement de messages concernant les informations de l'association 

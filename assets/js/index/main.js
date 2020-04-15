@@ -57,6 +57,8 @@ function select_game(e) {
   } else if (e.keyCode == "81") {
     // Q
     if (index_game !== 0) {
+      token_remaining();
+
       document.querySelector(".swiper-button-prev").click();
       index_game--;
 
@@ -80,6 +82,7 @@ function select_game(e) {
   } else if (e.keyCode == "68") {
     // D
     if (index_game !== 3) {
+      token_remaining();
       document.querySelector(".swiper-button-next").click();
       index_game++;
 
@@ -102,30 +105,31 @@ function select_game(e) {
     }
   } else if (e.keyCode == "70") {
     // New window to add tokens
+    writeGameIsStarted();
+
     var BrowserWindow = remote.BrowserWindow;
-        var window = new BrowserWindow({
-          height: 600,
-          width: 800,
-          webPreferences: {
-            nodeIntegration: true,
-          },
-        });
+    var window = new BrowserWindow({
+      height: 500,
+      width: 900,
+      webPreferences: {
+        nodeIntegration: true,
+      },
+    });
 
-        //Remove menu bar
-        //window.removeMenu();
-        // Load the URL 
-        window.loadURL(
-          `file://${__dirname}/token.html`
-        );
-  }
+    window.setMenuBarVisibility(false);
 
-  else if (e.keyCode == "13" && token !== 0) {
+    //Remove menu bar
+    //window.removeMenu();
+    // Load the URL
+    window.loadURL(`file://${__dirname}/token.html`);
+  } else if (e.keyCode == "13" && token !== 0) {
     // Enter
 
     switch (index_game) {
       case 0:
         token--;
-        token_remaining();
+        writeTokenRemaining(token);
+        writeGameIsStarted();
 
         // Launch mario bros infinite
 
@@ -151,7 +155,8 @@ function select_game(e) {
         break;
       case 1:
         token--;
-        token_remaining();
+        writeTokenRemaining(token);
+        writeGameIsStarted();
 
         // Launch pong game
 
@@ -176,7 +181,8 @@ function select_game(e) {
         break;
       case 2:
         token--;
-        token_remaining();
+        writeTokenRemaining(token);
+        writeGameIsStarted();
 
         // Launch pacman game
         var BrowserWindow = remote.BrowserWindow;
@@ -198,8 +204,8 @@ function select_game(e) {
         break;
       case 3:
         token--;
-        token_remaining();
-
+        writeTokenRemaining(token);
+        writeGameIsStarted();
         // Launch tetris game
         var BrowserWindow = remote.BrowserWindow;
         var window = new BrowserWindow({
@@ -225,7 +231,22 @@ function select_game(e) {
 
 // Display the token remaining
 function token_remaining() {
-  $("#token_remainig").html(`${token} JETONS`);
+  fs.readFile("conf/tokenRemaining.conf", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    $("#token_remainig").html(`${data} JETONS`);
+    token = parseInt(data);
+  });
+}
+
+function writeTokenRemaining(token) {
+  fs.writeFile("conf/tokenRemaining.conf", token, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
 }
 
 // Fade animation between text association
@@ -249,4 +270,11 @@ function fadeAnimation() {
       })
       .fadeIn();
   }, 20000);
+}
+
+function writeGameIsStarted() {
+  fs.writeFile("conf/gameIsStarted.conf", "true", (err) => {
+    // In case of a error throw err.
+    if (err) throw err;
+  });
 }
