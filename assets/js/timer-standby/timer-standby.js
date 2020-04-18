@@ -48,10 +48,10 @@ function resetTimer(e) {
   e = e || window.event;
 
   if (
-    e.keyCode == 90 ||
-    e.keyCode == 83 ||
-    e.keyCode == 81 ||
-    e.keyCode == 68
+    e.keyCode == 39 ||
+    e.keyCode == 37 ||
+    e.keyCode == 38 ||
+    e.keyCode == 40
   ) {
     isStanby = false;
     fs.writeFile("conf/gameIsStarted.conf", "false", (err) => {

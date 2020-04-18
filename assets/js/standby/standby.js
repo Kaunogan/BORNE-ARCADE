@@ -1,12 +1,14 @@
+const { remote } = require("electron").remote;
 
-const { remote } = require('electron').remote;
+document.addEventListener("keydown", closeStandby);
 
-
-document.addEventListener('keydown', closeStandby);
-
-function closeStandby(e){
-
-    if(e.keyCode == 90 || e.keyCode == 83 || e.keyCode == 81 || e.keyCode == 68){
-        window.close();
-    }
+function closeStandby(e) {
+	if (
+		e.keyCode == 38 ||
+		e.keyCode == 40 ||
+		e.keyCode == 37 ||
+		e.keyCode == 39
+	) {
+		window.close();
+	}
 }

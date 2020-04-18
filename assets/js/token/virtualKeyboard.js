@@ -79,8 +79,8 @@ function move_on_keyboard_number(e) {
         number_selected.select();
     }
 
-    if (e.keyCode == "90") {
-        // Z
+    if (e.keyCode == "38") {
+        // haut
 
         if (number >= 3 && number <= 11) {
             $(`#nbr_${number}`).parent().css({
@@ -99,7 +99,7 @@ function move_on_keyboard_number(e) {
             number_selected.focus();
             number_selected.select();
         }
-    } else if (e.keyCode == "83") {
+    } else if (e.keyCode == "40") {
         // S
 
         if (number >= 0 && number <= 8) {
@@ -119,7 +119,7 @@ function move_on_keyboard_number(e) {
             number_selected.focus();
             number_selected.select();
         }
-    } else if (e.keyCode == "81") {
+    } else if (e.keyCode == "37") {
         // Q
         if (number !== 0) {
             $(`#nbr_${number}`).parent().css({
@@ -138,7 +138,7 @@ function move_on_keyboard_number(e) {
         number_selected = document.getElementById(`nbr_${number}`);
         number_selected.focus();
         number_selected.select();
-    } else if (e.keyCode == "68") {
+    } else if (e.keyCode == "39") {
         // D
 
         $(`#nbr_${number}`).parent().css({
