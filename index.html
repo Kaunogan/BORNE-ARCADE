@@ -2,21 +2,79 @@
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Crypt</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borne d'arcade</title>
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="assets/css/index/style.css">
+
 </head>
 
 <body>
-	<div class="container"></div>
 
-	<!-- SCRIPT -->
+  <!-- particles.js container -->
+  <div id="particles-js">
 
-	<!-- IMPORT -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <div class="title">
+      <img src="assets/img/backgrounds/Titre.png" alt="">
+    </div>
 
-	<script src="./js/crypt.js" charset="utf-8"></script>
+    <!-- multistep form -->
+    <form id="msform">
+      <!-- progressbar -->
+      <ul id="progressbar">
+        <li class="active">Don</li>
+        <li>Paiement</li>
+        <li>Votre code</li>
+      </ul>
+      <!-- fieldsets -->
+      <fieldset>
+        <h3 class="fs-subtitle">Votre don</h3>
+        <select id="party">
+          <option value="1">1 €</option>
+          <option value="3">3 €</option>
+          <option value="5">5 €</option>
+          <option value="8">8 €</option>
+        </select>
+        <br>
+        <input type="button" name="next" class="next action-button" value="Suivant" />
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-subtitle">Choisiez votre moyent de paiement</h3>
+        <h3>HiPay</h3>
+        <h3>Lydia</h3>
+        <input type="button" name="previous" class="previous action-button" value="Retour" />
+        <input id="generateToken" type="button" name="next" class="next action-button" value="Valider" />
+      </fieldset>
+      <fieldset>
+        <h3 class="fs-subtitle">Votre code</h3>
+        <h3 id="token"></h3>
+      </fieldset>
+    </form>
+  </div>
 
-	<!-- /SCRIPT -->
+  <!-- SCRIPT -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+  <!-- PARTICLESJS -->
+  <script src="assets/js/index/particles/particles.js"></script>
+
+  <script src="assets/js/index/particles/app.js"></script>
+  <!-- /PARTICLESJS -->
+
+  <!-- INDEX -->
+  <script src="assets/js/index/main.js"></script>
+  <!-- /INDEX -->
+
+  <!-- TOKEN -->
+  <script src="assets/js/index/crypt.js" charset="utf-8"></script>
+  <!-- /TOKEN -->
+
+  <!-- /SCRIPT -->
+
 </body>
 
 </html>

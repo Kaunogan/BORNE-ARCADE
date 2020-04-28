@@ -11,7 +11,7 @@ var ok = true;
 var random = 0;
 var encMsg = null;
 var array_token_used = [];
-var party = 4;
+var party = 0;
 var old_date = 0;
 var old_month = 0;
 var alphabet = [
@@ -48,59 +48,64 @@ var alphabet = [
   "E"
 ];
 
+
 // Check date and Leter
 
 readInFileDate(
-  "http://unicorn/Perso/Ynov/Site_Paiement_Borne/conf/date.conf",
+  "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/conf/date.conf",
   function() {
     if (month > parseInt(old_month) || month < parseInt(old_month)) {
       console.warn("1");
 
       clearFileToken(
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
       );
 
       writeInFileDate(
         month.toString() + "," + d.toString(),
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
       );
 
       writeInFileLetter(
         alphabet[d - 1].toString(),
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
       );
     } else if (month == parseInt(old_month) && d > parseInt(old_date)) {
       console.warn("2");
 
       clearFileToken(
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/clearToken.php"
       );
 
       writeInFileDate(
         month.toString() + "," + d.toString(),
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/writeDate.php"
       );
 
       writeInFileLetter(
         alphabet[d - 1].toString(),
-        "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
+        "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/writeLetter.php"
       );
     }
 
     readInFileLetter(
-      "http://unicorn/Perso/Ynov/Site_Paiement_Borne/conf/letter.conf"
+      "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/conf/letter.conf"
     );
   }
 );
 
 // For the token
+$('#generateToken').click(function() {
 
-readInFileTokenUsed(
-  "http://unicorn/Perso/Ynov/Site_Paiement_Borne/conf/tokenUsed.conf",
-  function() {
-    random_number();
-  }
-);
+  party = parseInt($("#party option:selected").text());
+  readInFileTokenUsed(
+    "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/conf/tokenUsed.conf",
+    function() {
+      random_number();
+      $("#generateToken").attr('disabled', 'disabled');
+    }
+  );
+})
 
 // Functions
 
@@ -137,7 +142,6 @@ function random_number() {
   encMsg = encrypt(msg, random); // Call crypt function
 
   var token = encMsg.toString() + random.toString(); // Token to write in file
-
   var exit = true;
 
   if (array_token_used.length != 0) {
@@ -160,7 +164,7 @@ function random_number() {
 
   writeInFileToken(
     token,
-    "http://unicorn/Perso/Ynov/Site_Paiement_Borne/php/writeToken.php"
+    "http://851de78c.ngrok.io/Perso/Ynov/Site_Paiement_Borne/php/writeToken.php"
   ); // Call function to write token in file
 }
 
@@ -182,9 +186,8 @@ function display_token() {
   if (msg != decMsg) ok = false;
 
   // Display the token generate
-  $(".container").append(`
+  $("#token").append(`
 		${party.toString() + number_crypted.toString() + random.toString()}<br>
-		${decMsg}
 	`);
 }
 
@@ -280,9 +283,3 @@ function clearFileToken(url) {
     url: url, //url of receiver file on server
   });
 }
-
-// For the arcade menu
-
-//var decMsg = encrypt(encMsg, -1 * random);
-
-//if (msg != decMsg) ok = false;
