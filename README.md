@@ -28,7 +28,7 @@ About us
 -   [Kaunogan](https://github.com/Kaunogan) (github)
 -   [LEMOINE Kaunogan](https://fr.linkedin.com/in/kaunogan-lemoine-7869a6189) (linkedIn)
 
-### alexandre
+### Alexandre
 
 -   alexandre.gelin@ynov.com (mail)
 -   [AexandreGelin](https://github.com/AexandreGelin) (github)
