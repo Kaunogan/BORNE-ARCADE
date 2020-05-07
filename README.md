@@ -50,7 +50,7 @@ The payments will go to an association.
 Here are the prerequisites necessary for this project
 
    |      Prerequisites     |  
-   \| ---------------------- \|
+   | ---------------------- |
    |        Node.js (last version)     |  
    |        Apache     |  
    |        Php     |   
@@ -72,7 +72,7 @@ arcade/
 -   Framework : <a href="https://electronjs.org">Electron</a>
 
      |     Languages     |  
-     \| ----------------- \|
+     | ----------------- |
      |        HTML       |  
      |        CSS        |
      |        JS         |
@@ -135,7 +135,7 @@ In order to facilitate the development the site works on the client side thereaf
 
 1 - Place the site folder on apache server with PHP
 
-2 - Change paths to php files in assets / js / index.crypt.js
+2 - Change paths to php files in assets / js / index / crypt.js
 
 3 - Launch index.html
 
