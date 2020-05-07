@@ -6,7 +6,7 @@
   <h3 align="center">Ynov - Ydays - LEMOINE Kaunogan | GELIN Alexandre | GUMBAU Elric</h3>
 </p>
 
-## ADAPTIVE SOFTWARE | B3 Info
+## Collaborative arcade machine | B3 Info
 
 -   [About us](#About-us)
 -   [About this project](#About-this-project)
@@ -151,7 +151,9 @@ In order to facilitate the development the site works on the client side thereaf
 
 2 - Insert the SD card into the Raspberry and follow the instructions for installing the os
 
-3 - Install git 4 Retrieve the menu on GitHub using the command: git clone <https://github.com/Kaunogan/BORNE-ARCADE.git>
+3 - Install git 
+
+4 Retrieve the menu on GitHub using the command: git clone <https://github.com/Kaunogan/BORNE-ARCADE.git>
 
 5 - Install dependencies with the command: npm install
 
