@@ -153,7 +153,7 @@ In order to facilitate the development the site works on the client side thereaf
 
 3 - Install git 
 
-4 Retrieve the menu on GitHub using the command: git clone <https://github.com/Kaunogan/BORNE-ARCADE.git>
+4 - Retrieve the menu on GitHub using the command: git clone <https://github.com/Kaunogan/BORNE-ARCADE.git>
 
 5 - Install dependencies with the command: npm install
 
