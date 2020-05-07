@@ -155,39 +155,46 @@ In order to facilitate the development the site works on the client side thereaf
 
 4 - Retrieve the menu on GitHub using the command: git clone <https://github.com/Kaunogan/BORNE-ARCADE.git>
 
-5 - Install dependencies with the command: npm install
+5 - Install dependencies with the command 
 
-6 - Launch the menu with the command: npm start
+	npm install
+
+6 - Launch the menu with the command
+	npm start
 
 ### Create a script to launch the menu when the Raspberry starts
 
 1 - Open a command terminal on the rasberry
 
-2 - Go to the init.d folder: cd /etc/init.d
+2 - Go to the init.d folder
 
-3: Create a new script file : sudo nano script.sh
+	cd /etc/init.d
 
-4: Fill the script as follows:
+3: Create a new script file
 
-\#! / bin / sh
+	sudo nano script.sh
 
-cd / home / pie / Documents / BORNE-ARCADE / menu
+4: Fill the script as follows
 
-npm start
+	\#! / bin / sh
 
-Save with Ctrl + X then Y (or O if the terminal is in French)
+	cd / home / pie / Documents / BORNE-ARCADE / menu
 
-5 - Change the permissions of the script.sh file to make it executable at startup:
+	npm start
 
-sudo chmod + x script.sh
+	Save with Ctrl + X then Y (or O if the terminal is in French)
 
-6 - Execute the command:
+5 - Change the permissions of the script.sh file to make it executable at startup
 
-sudo update-rc.d script.sh defaults
+	sudo chmod + x script.sh
 
-7 - Restart the Raspberry:
+6 - Execute the command
 
-sudo reboot
+	sudo update-rc.d script.sh defaults
+
+7 - Restart the Raspberry
+
+	sudo reboot
 
 ## What remains to be done
 
