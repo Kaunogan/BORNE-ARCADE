@@ -90,7 +90,7 @@ arcade/
         Press enter to play.
         Once the player loses, the game closes and he returns to the menu
 
-        Every 30 seconds of inactivity an old video is launched explaining the operation of adding tokens
+        Every 30 seconds of inactivity an video is launched explaining the operation of adding tokens
 
 -   Site
 
@@ -137,11 +137,13 @@ In order to facilitate the development the site works on the client side thereaf
 
 2 - Change paths to php files in assets / js / index.crypt.js
 
-3 - Choose your amount
+3 - Launch index.html
 
-4 - Choose your payment method (for the moment it does not work, it must be implemented.) Click on 'suivant'
+4 - Choose your amount
 
-5 - Your code is generate ! You can enter it on the borne
+5 - Choose your payment method (for the moment it does not work, it must be implemented.) Click on 'suivant'
+
+6 - Your code is generate ! You can enter it on the borne
 
 ### Raspberry
 
