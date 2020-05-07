@@ -188,7 +188,7 @@ In order to facilitate the development the site works on the client side thereaf
 
 5 - Change the permissions of the script.sh file to make it executable at startup
 
-	sudo chmod + x script.sh
+	sudo chmod+x script.sh
 
 6 - Execute the command
 
