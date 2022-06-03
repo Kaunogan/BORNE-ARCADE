@@ -72,14 +72,14 @@ function fill_keyboard_by_number() {
 function move_on_keyboard_number(e) {
     e = e || window.event;
 
-    if (number == 0) {
+    if (number === 0) {
         number_selected = document.getElementById(`nbr_${number}`);
         // Auto select input when the app launch
         number_selected.focus();
         number_selected.select();
     }
 
-    if (e.keyCode == "38") {
+    if (e.keyCode === "38") {
         // haut
 
         if (number >= 3 && number <= 11) {
@@ -99,7 +99,7 @@ function move_on_keyboard_number(e) {
             number_selected.focus();
             number_selected.select();
         }
-    } else if (e.keyCode == "40") {
+    } else if (e.keyCode === "40") {
         // S
 
         if (number >= 0 && number <= 8) {
@@ -119,7 +119,7 @@ function move_on_keyboard_number(e) {
             number_selected.focus();
             number_selected.select();
         }
-    } else if (e.keyCode == "37") {
+    } else if (e.keyCode === "37") {
         // Q
         if (number !== 0) {
             $(`#nbr_${number}`).parent().css({
@@ -138,7 +138,7 @@ function move_on_keyboard_number(e) {
         number_selected = document.getElementById(`nbr_${number}`);
         number_selected.focus();
         number_selected.select();
-    } else if (e.keyCode == "39") {
+    } else if (e.keyCode === "39") {
         // D
 
         $(`#nbr_${number}`).parent().css({
@@ -158,18 +158,18 @@ function move_on_keyboard_number(e) {
         number_selected = document.getElementById(`nbr_${number}`);
         number_selected.focus();
         number_selected.select();
-    } else if (e.keyCode == "13") {
+    } else if (e.keyCode === "13") {
         // Enter
 
-        if (number == 10) {
+        if (number === 10) {
             var inputtext = $("#token_input").val();
             var temp = inputtext.substring(0, inputtext.length - 1);
             $("#token_input").val(temp);
             tokenFinal = temp;
             $("#token_input").val(tokenFinal);
-        } else if (number == 11) {
+        } else if (number === 11) {
             // Decrypt the token
-            if (tokenFinal != "" && tokenFinal.length > 3) {
+            if (tokenFinal !== "" && tokenFinal.length > 3) {
                 $("#azerty").empty();
                 parse_token(tokenFinal);
                 tokenFinal = "";
@@ -182,7 +182,7 @@ function move_on_keyboard_number(e) {
                 $("#token_input").val(tokenFinal);
             }
         }
-    } else if (e.keyCode == "27") {
+    } else if (e.keyCode === "27") {
         // Echap
         window.close();
     }
